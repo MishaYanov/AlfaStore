@@ -1,0 +1,64 @@
+<div class="" style="position: relative;">
+  <div style="position: absolute;" class="modal" *ngIf="Cmodal">
+    <app-finalize-sale (btnClick)="closeModalHandler()"></app-finalize-sale>
+  </div>
+</div>
+<!-- Cmodal -->
+<div class="checkout-wrapper">
+  <div class="checkout-cart">
+    <div class="metrics">
+      <div class="metval"><h4>Total Items: {{totalItems}}</h4></div>
+      <div class="metval"><h4>Total Price: {{totalPrice}}</h4></div>
+    </div>
+    <div class="checkout-cart_items">
+      <table>
+        <thead>
+          <td>Name</td>
+          <td>Quantity</td>
+          <td>Price</td>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cart?.cartItems">
+            <td>{{item?.product?.name}}</td>
+            <td>{{item?.quantity}}</td>
+            <td>{{item?.totalPrice}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="checkout-delivery">
+    <div class="actions">
+      <button class="btn sec btn-small" (click)="invokeSavedAddress()">Use Saved Address</button>
+      <button class="btn sec btn-small" (click)="resetDelivery()">Reset Ipunts</button>
+      <button class="btn sec btn-small" (click)="saveDelivery()">Save Delivery Info</button>
+      <button class="btn sec btn-small" (click)="saveAndExit()">
+        Save delivery details and go back to store
+      </button>
+    </div>
+    <h2>Delivery Information</h2>
+    <form action="" [formGroup]="newDelivery">
+      <div class="form--body">
+      <div class="form--body--input">
+        <label for="city">City</label>
+        <input type="text" name="city" id="" formControlName="city" >
+      </div>
+      <div class="form--body--input">
+        <label for="">Address</label>
+        <input type="text" name="" id="" formControlName="address" />
+      </div>
+    </div>
+    <div class="errors" *ngIf="!newDelivery.valid && (newDelivery.get('city')?.touched || newDelivery.get('addres')?.touched)">
+      <span><h3 style="color: red;">NOT VALID - Please enter city and address</h3></span>
+    </div>
+    </form>
+  <div class="action-bar">
+    <div class="delete">
+      <button class="btn sec" (click)="deleteCartAndDelivery()">Delete Cart</button>
+    </div>
+    <div class="submit-cart">
+      <button class="btn main" (click)="submitInfo()">Submit</button>
+    </div>
+  </div>
+</div>
+</div>

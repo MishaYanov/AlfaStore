@@ -1,0 +1,54 @@
+@import '../../../../styles/styles.scss';
+
+.cart-wrapper{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    margin-left: 4px;
+    .cart-table{
+        table{
+        width: 100%;
+        height: fit-content;
+        gap: 1rem;
+        thead{
+            background-color: #ccc;
+                td{
+                    padding: 1rem;
+                    color: $primary-color;
+                }
+        }
+        tbody{
+            height: 50vh;
+            tr{
+                td{
+                    padding: 0.5rem;
+                    border-bottom: 1px solid #ccc;
+                }
+            }
+        }
+    }
+    }
+    
+}
+.cart-info{
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    padding: 0 3rem 0;
+    h3{
+        color: $primary-color;
+    }
+    
+}
+
+.cart-controllers{
+    margin-bottom: 7rem;
+    margin-top: 1rem;
+    .cart-controllers__checkout{
+        padding-left: 10%;
+        display: flex;
+        gap: 2rem;
+        margin: 1rem;
+    }
+}

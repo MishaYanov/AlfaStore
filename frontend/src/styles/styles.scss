@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+$primary-color: #d50000;
+$primary-dark-color: #9b0000;
+$primary-light-color: #ff5131;
+$secondary-color: #757575;
+$secondary-dark-color: #494949;
+$secondary-light-color: #a4a4a4;
+$text-color: #fff;
+
+
+p, h1, h2, h3, h4, h5, h6, span, a, li, label, table {
+    color: $text-color;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    font-family: 'Poppins', sans-serif;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+ul, li, ol{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+input{
+    outline: none;
+    border: none;
+    height: 1rem;
+    min-width: 7rem;
+    padding: 0.25rem;
+    border-radius: 5px;
+    font-size: 1rem;
+
+    &::placeholder{
+        color: $secondary-dark-color;
+    }
+    &:focus{
+        outline: $primary-color 1px solid;
+    }
+}
+select{
+    outline: none;
+    border: none;
+    height: 1.5rem;
+    min-width: 7rem;
+    border-radius: 5px;
+    font-size: 1rem;
+
+    &::placeholder{
+        color: $secondary-dark-color;
+    }
+    &:focus{
+        outline: $primary-color 1px solid;
+    }
+}
+label{
+    font-size: 1rem;
+    font-weight: 600;
+    color: $text-color;
+    margin-right: 1rem;
+}
+
+.btn{
+    display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.5;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      user-select: none;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      color: #fff;
+      // background-color: $primary-color;
+      // border-color: $primary-dark-color;
+     
+      &:focus{
+          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+      }
+      &:active{
+          color: #fff;
+          background-color: #0062cc;
+          border-color: #005cbf;
+      }
+      &:disabled{
+          color: #fff;
+          background-color: #6c757d;
+          border-color: #6c757d;
+      }
+      &.main{
+        @extend .btn;
+        background-color: $primary-color;
+        border: 2px solid $primary-dark-color;
+      }
+      &.main:hover{
+        color: #fff;
+        background-color: $primary-dark-color;
+        border-color: $secondary-dark-color;
+    }
+    &.sec{
+      @extend .btn;
+      background-color: transparent;
+      color: $primary-color;
+      border: solid 2px $primary-color;
+    }
+    &.sec:hover{
+      color: white;
+      background-color: $primary-light-color;
+    }
+    &.grey{
+        @extend .btn;
+        background-color: $secondary-dark-color;
+        border: solid 2px $secondary-color;
+    }
+    &.grey:hover{
+        background-color: $secondary-light-color;
+    }
+  }

@@ -1,0 +1,28 @@
+.modal-bacground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.401);
+}
+
+.final-wrapper {
+  position: relative;
+  width: 50vw;
+  height: 50vh;
+  margin-top: 4rem;
+  left: 50%;
+  background-color: #9dd1ff;
+  z-index: 400;
+  padding: 1rem;
+}
+
+.final-wrapper .header h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-decoration: underline;
+}
+/*# sourceMappingURL=finalize-sale.component.css.map */
